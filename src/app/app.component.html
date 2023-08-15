@@ -16,9 +16,17 @@
 <!-- NgFor -->
 <ul *ngFor="let city of cities">
   <!-- <li>{{city}}</li> -->
-  
+
   <!-- Attributes Directive -->
   <!-- <li [ngClass]="['selected','blue']">{{city}}</li>  -->
   <!-- <li [ngClass]="{'selected':city === 'Sevilla', 'blue':city !== 'Sevilla'}">{{city}}</li>  -->
-  <li [ngStyle]="{'color':'white','background-color': city === 'Sevilla' ? 'brown': 'green'}">{{city}}</li>
+  <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
+  <!-- <li [ngStyle]="{'color':'white','background-color': city === 'Sevilla' ? 'brown': 'green'}">{{city}}</li> -->
+  
 </ul>
+
+<!-- Event Binding -> User Actions -->
+<div *ngIf="selection">
+  <p > Your city is: {{selection}}</p>
+  <button  (click)="onClear()">Clear your selection</button>
+</div>
