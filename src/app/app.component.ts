@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, OnDestroy, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,7 @@ import { Component, OnChanges, OnInit, OnDestroy, SimpleChanges } from '@angular
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnChanges, OnInit, OnDestroy{
+export class AppComponent {
   title = 'challengeOne';
   url = 'https://miro.medium.com/v2/resize:fit:563/1*wmiHccq6imyMUakUZV_f6g.png';
   
@@ -17,17 +17,17 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy{
   cities = ['Madrid','Barcelona','Sevilla'];
 
   // Component Life Cycle
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('Change-> ', changes);
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log('Change-> ', changes);
+  // }
 
-  ngOnInit(): void{
-    console.log('OnInit');
-  }
+  // ngOnInit(): void{
+  //   console.log('OnInit');
+  // }
 
-  ngOnDestroy(): void {
-    console.log('Destroy');
-  }
+  // ngOnDestroy(): void {
+  //   console.log('Destroy');
+  // }
 
   // Event Binding
   selection!: string;

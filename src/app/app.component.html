@@ -28,5 +28,9 @@
 <!-- Event Binding -> User Actions -->
 <div *ngIf="selection">
   <p > Your city is: {{selection}}</p>
-  <button  (click)="onClear()">Clear your selection</button>
+  <!-- <button  (click)="onClear()">Clear your selection</button> -->
+  <!-- Working with @Input() Decorator -->
+  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
+  <!-- <app-button (click)="onClear()" [color]="'green'" [label]="'Test'"></app-button>
+  <app-button (click)="onClear()" [color]="'red'" [label]="'Using'"></app-button> -->
 </div>
