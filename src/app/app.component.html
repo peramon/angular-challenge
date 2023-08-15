@@ -15,5 +15,10 @@
 
 <!-- NgFor -->
 <ul *ngFor="let city of cities">
-  <li>{{city}}</li>
+  <!-- <li>{{city}}</li> -->
+  
+  <!-- Attributes Directive -->
+  <!-- <li [ngClass]="['selected','blue']">{{city}}</li>  -->
+  <!-- <li [ngClass]="{'selected':city === 'Sevilla', 'blue':city !== 'Sevilla'}">{{city}}</li>  -->
+  <li [ngStyle]="{'color':'white','background-color': city === 'Sevilla' ? 'brown': 'green'}">{{city}}</li>
 </ul>
