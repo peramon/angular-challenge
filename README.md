@@ -7,3 +7,6 @@ A decorator is a special type of declaration that can be attached to a class, me
 
 ### @Input() Decorator
 It is a child component (or directive) means that the property can receive its value from its parent component.
+
+### @Output Decorator
+In a child component (or directive) it allows data to flow from the child to the parent.

@@ -40,5 +40,9 @@ export class AppComponent {
   onClear(): void{
     this.selection = '';
   }
+
+  addNewCity(city: string): void{
+    this.cities.push(city);
+  }
 }
 

@@ -1,36 +1,50 @@
-<p>{{title}} in Angular</p>
-<p>Total: {{5+5}}</p>
-<img src="{{url}}" alt="">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 my-3">
+      <app-form-new-item (newItemEvent)="addNewCity($event)" [label]="'City'" [className]="'btn-info'"></app-form-new-item>
+    </div>
+    <div class="col-md-8">
+      <!-- <p>{{title}} in Angular</p>
+      <!-- <p>{{title}} in Angular</p>
+      <p>Total: {{5+5}}</p>
+      <img src="{{url}}" alt="">
 
-<!-- Two-way Data Binding -->
-<p>The name is: {{name}}</p>
-<input type="text" [(ngModel)]="name">
+      <!-- Two-way Data Binding 
+      <p>The name is: {{name}}</p>
+      <input type="text" [(ngModel)]="name">-->
 
 
-<!-- Directives -->
+      <!-- Directives -->
 
-<!--  NgIf -->
-<p *ngIf="name">The name is: {{name}}</p>
-<input type="text" [(ngModel)]="name"> 
+      <!--  NgIf
+      <p *ngIf="name">The name is: {{name}}</p>
+      <input type="text" [(ngModel)]="name">
+ -->
+      <!-- NgFor -->
+      <ul>
+        <!-- <li>{{city}}</li> -->
 
-<!-- NgFor -->
-<ul *ngFor="let city of cities">
-  <!-- <li>{{city}}</li> -->
+        <!-- Attributes Directive -->
+        <!-- <li [ngClass]="['selected','blue']">{{city}}</li>  -->
+        <!-- <li [ngClass]="{'selected':city === 'Sevilla', 'blue':city !== 'Sevilla'}">{{city}}</li>  -->
+        <li *ngFor="let city of cities" (click)="onCityClicked(city)" [ngClass]="{'alert alert-info':city === selection}">
+          {{city}}</li>
+        <!-- <li [ngStyle]="{'color':'white','background-color': city === 'Sevilla' ? 'brown': 'green'}">{{city}}</li> -->
 
-  <!-- Attributes Directive -->
-  <!-- <li [ngClass]="['selected','blue']">{{city}}</li>  -->
-  <!-- <li [ngClass]="{'selected':city === 'Sevilla', 'blue':city !== 'Sevilla'}">{{city}}</li>  -->
-  <li (click)="onCityClicked(city)" [ngClass]="{'selected':city === selection}">{{city}}</li>
-  <!-- <li [ngStyle]="{'color':'white','background-color': city === 'Sevilla' ? 'brown': 'green'}">{{city}}</li> -->
-  
-</ul>
+      </ul>
 
-<!-- Event Binding -> User Actions -->
-<div *ngIf="selection">
-  <p > Your city is: {{selection}}</p>
-  <!-- <button  (click)="onClear()">Clear your selection</button> -->
-  <!-- Working with @Input() Decorator -->
-  <app-button (click)="onClear()" [color]="'blue'" [label]="'Clear your selection'" [selection]="selection"></app-button>
-  <!-- <app-button (click)="onClear()" [color]="'green'" [label]="'Test'"></app-button>
-  <app-button (click)="onClear()" [color]="'red'" [label]="'Using'"></app-button> -->
+      
+    </div>
+    <div class="col-md-4">
+      <!-- Event Binding -> User Actions -->
+      <div *ngIf="selection">
+        <p> Your city is: {{selection}}</p>
+        <!-- <button  (click)="onClear()">Clear your selection</button> -->
+        <!-- Working with @Input() Decorator -->
+        <app-button (click)="onClear()" [color]="'brown'" [label]="'Clear your selection'"></app-button>
+        <!-- <app-button (click)="onClear()" [color]="'green'" [label]="'Test'"></app-button>
+        <app-button (click)="onClear()" [color]="'red'" [label]="'Using'"></app-button> -->
+      </div>
+    </div>
+  </div>
 </div>
