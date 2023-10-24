@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
   template: `<ul>
   <li (click)="onCityClicked(city)" 
   [ngClass]="{'alert alert-info':city === selection}">
-    {{city}}</li>
+    {{city | titlecase}}</li>
 </ul>
 <p>Count: {{counterRender()}}</p>`,
   styleUrls: ['./cities.component.css'],

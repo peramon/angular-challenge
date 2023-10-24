@@ -32,6 +32,8 @@ export class AppComponent {
   // Event Binding
   selection!: string;
 
+  criteria = '';
+
   onCityClicked(city: string): void{
     console.log('City ->',city)
     this.selection = city;

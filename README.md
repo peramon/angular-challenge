@@ -28,3 +28,7 @@ It is the mechanism or change detection strategy that Angular uses to know when 
 There are two strategies:
 OnPush: Set the strategy to CheckOnce (on demand).
 Default: Sets the strategy to CheckAlways.
+
+### Pipes
+
+Transform data, pipes receive a data, and can transform that data.
