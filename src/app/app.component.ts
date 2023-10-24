@@ -44,5 +44,6 @@ export class AppComponent {
   addNewCity(city: string): void{
     this.cities.push(city);
   }
+
 }
 
